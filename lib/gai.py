@@ -1,10 +1,6 @@
 """Script to return Global Adaptation Index (GAI) data by country."""
 import sys
 
-def main(csv):
-    """Main entry point for the script."""
-    pass
-
 def returnDataOptions(iso_code):
     """Takes an ISO code as an argument and returns options for data"""
     pass
@@ -15,6 +11,10 @@ def listData(country):
 
 def averageData(country):
     """Returns an average of all GAI scores for all available years for a given country"""
+    pass
+
+def main():
+    """Main entry point for the script."""
     pass
 
 if __name__ == '__main__':
