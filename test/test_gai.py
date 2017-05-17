@@ -1,4 +1,4 @@
-from lib.gai import loadcsv, extractData, listData, averageData, returnDataOptions
+from lib.gai import loadcsv, extractData, listData, meanData, rangeData
 import os.path
 
 def test_loadcsv():
@@ -15,10 +15,13 @@ def test_listData():
     """Test to check method returns all data for given ISO code"""
     assert listData("AE") == '2000 | 0.30251184\n2001 | 0.302267024\n2002 | 0.303079269\n2003 | 0.297885987\n2004 | 0.305190096\n2005 | 0.310410195\n2006 | 0.297995201\n2007 | 0.296620561\n2008 | 0.305768368\n2009 | 0.297571739\n2010 | 0.29877485\n2011 | 0.29857415\n2012 | 0.29837345\n2013 | 0.298276917'
 
-def test_averageData():
-    """Test to check method gives an average of all GAI scores for given ISO code"""
-    assert averageData("AE") == 0.30094997478571434
+def test_meanData():
+    """Test to check method gives correct mean average of all GAI scores for given ISO code"""
+    assert meanData("AE") == 0.30094997478571434
 
+def test_rangeData():
+    """Test to check method gives correct range of all GAI scores for given ISO code"""
+    assert rangeData("AE") == 0.013789633999999995
 
 # For copying to python REPL
 a = [0.30251184, 0.302267024, 0.303079269, 0.297885987, 0.305190096, 0.310410195, 0.297995201, 0.296620561, 0.305768368, 0.297571739, 0.29877485, 0.29857415, 0.29837345, 0.298276917]
@@ -27,3 +30,5 @@ a = [0.30251184, 0.302267024, 0.303079269, 0.297885987, 0.305190096, 0.310410195
 total = 4.213299647
 
 mean = 0.30094997478571434
+r4ange = 0.013789633999999995
+# standard_deviation =
