@@ -18,7 +18,6 @@ def listData(iso_code):
                  data.append(row['year'] + ' | ' + row['value'])
     result =  ('\n'.join(data))
     return result
-    # Maybe something like while ID == string return row sort of thing? Or values for year and gai score in row...
 
 def averageData(iso_code):
     """Returns an average of all GAI scores for all available years for a given country"""

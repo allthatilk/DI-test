@@ -24,4 +24,3 @@ Time taken: ~
 Challenges:
 	* Getting used to the csv module
 	* Incomplete Python knowledge
-	* 
