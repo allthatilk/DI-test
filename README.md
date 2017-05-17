@@ -41,7 +41,7 @@ Time taken: ~9 hours
 * Removed returnDataOptions method as task specifies that data will feed into external interface so a command line UI isn't needed
 * Added range and standard deviation because why not? But really because they gave a good indication of how the data has changed over time in relation to the mean value.
 * Didn't add mode or median because they didn't seem useful for this data set as scores didn't repeat and the middle score would have given more of a time snapshot than any useful data on score trends
-* Didn't want to finish with no working code to experimented with refactoring in separate files but ran out of time for writing new tests
+* Didn't want to finish with no working code so experimented with refactoring in separate files but ran out of time for writing new tests
 
 
 ### Challenges:
