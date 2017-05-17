@@ -1,41 +1,38 @@
+# WIP
 import math
+# from lib.data import CountryData
 
 class Averages:
-
-    def __init__(self, dataset, iso_code):
-        self.dataset = dataset
-        self.iso_code = iso_code
+    def __init__(self, country_data):
+        self.country_data = country_data.dataset
+        self.data = self.prepData()
 
     def prepData(self):
         """Formats given dataset for averaging methods"""
-        dataset = list(extractData(self.iso_code))
         scores = []
-        for data in dataset:
+        for data in self.country_data:
             scores.append(float(data[-1]))
         return scores
 
     def mean(self):
         """Returns mean average of all GAI scores for all available years"""
-        scores = prepDataForAverages()
-        length = len(scores)
-        total_value = sum(scores)
+        length = len(self.data)
+        total_value = sum(self.data)
         result = total_value / length
         return result
 
     def range(self):
         """Returns range of GAI scores"""
-        scores = prepDataForAverages()
-        sorted_scores = sorted(scores)
+        sorted_scores = sorted(self.data)
         result = sorted_scores[-1] - sorted_scores[0]
         return result
 
 
     def standardDeviation(self):
         """Returns standard deviation for GAI scores"""
-        scores = prepDataForAverages()
-        mean = meanData(iso_code)
+        mean = self.mean()
         subtracted_scores = []
-        for score in scores:
+        for score in self.data:
             subtracted_scores.append((score - mean)**2)
         sum_subtracted_scores = sum(subtracted_scores)
         length = len(subtracted_scores)
