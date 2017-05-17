@@ -8,21 +8,31 @@ def loadcsv(url):
     with open('lib/gai.csv', 'w') as f:
         f.writelines(csv_download.content.decode('utf-8'))
 
-def listData(iso_code):
-    """Extracts data from csv file and returns a formatted string of years and values for the given ISO"""
+def extractData(iso_code):
+    """Extracts data from csv file"""
     with open('lib/gai.csv', 'r') as f:
         reader = csv.DictReader(f)
-        data = []
+        year = []
+        value = []
         for row in reader:
             if row['id'] == iso_code:
-                 data.append(row['year'] + ' | ' + row['value'])
-    result =  ('\n'.join(data))
+                year.append(row['year'])
+                value.append(row['value'])
+
+        dataset = zip(year, value)
+        return dataset
+
+def listData(iso_code):
+    """Returns a formatted string of years and values for the given ISO"""
+    dataset = list(extractData(iso_code))
+    formatted_data = []
+    for data in dataset:
+        formatted_data.append(data[0] + ' | ' + data[-1])
+    result =  ('\n'.join(formatted_data))
     return result
 
 def averageData(iso_code):
     """Returns an average of all GAI scores for all available years for a given country"""
-    # Will need to use listData to get gai scores and then some kind of inject method to average unless python has
-    # a mean function built in. Will need to iterate through list output to turn gai scores into seperate array...
     pass
 
 def returnDataOptions(iso_code):
