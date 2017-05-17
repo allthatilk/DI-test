@@ -6,7 +6,7 @@ class Averages:
         self.dataset = dataset
         self.iso_code = iso_code
 
-    def prepDataForAverages(self):
+    def prepData(self):
         """Formats given dataset for averaging methods"""
         dataset = list(extractData(self.iso_code))
         scores = []
@@ -14,7 +14,7 @@ class Averages:
             scores.append(float(data[-1]))
         return scores
 
-    def meanData(self):
+    def mean(self):
         """Returns mean average of all GAI scores for all available years"""
         scores = prepDataForAverages()
         length = len(scores)
@@ -22,7 +22,7 @@ class Averages:
         result = total_value / length
         return result
 
-    def rangeData(self):
+    def range(self):
         """Returns range of GAI scores"""
         scores = prepDataForAverages()
         sorted_scores = sorted(scores)
@@ -30,7 +30,7 @@ class Averages:
         return result
 
 
-    def standardDeviationData(self):
+    def standardDeviation(self):
         """Returns standard deviation for GAI scores"""
         scores = prepDataForAverages()
         mean = meanData(iso_code)
