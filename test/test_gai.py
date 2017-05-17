@@ -1,4 +1,4 @@
-from lib.gai import loadcsv, extractData, listData, meanData, rangeData, standardDeviationData
+from lib.gai import extractData, listData, meanData, rangeData, standardDeviationData
 import os.path
 
 def test_loadcsv():
