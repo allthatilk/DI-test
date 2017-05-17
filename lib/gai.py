@@ -11,12 +11,13 @@ def loadcsv(url):
 
 def extractData(iso_code):
     """Extracts data from csv file"""
+    iso_code_formatted = iso_code.upper()
     with open('lib/gai.csv', 'r') as f:
         reader = csv.DictReader(f)
         year = []
         value = []
         for row in reader:
-            if row['id'] == iso_code:
+            if row['id'] == iso_code_formatted:
                 year.append(row['year'])
                 value.append(row['value'])
 

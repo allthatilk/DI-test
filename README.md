@@ -6,8 +6,11 @@
 	* run python
 	* from lib.gai import loadcsv, extractData, listData, meanData, rangeData, standardDeviationData
 	* before all other methods run:
-		* loadcsv("https://raw.githubusercontent.com/devinit/digital-platform/master/country-year/climate-vulnerability.csv")
+	loadcsv("https://raw.githubusercontent.com/devinit/digital-platform/master/country-year/climate-vulnerability.csv")
 	* use the listData, meanData, rangeData, and standardDeviationData methods to manipulate csv data in REPL
+		eg. listData("AE") which will return the available data for the United Arab Emirates
+
+	All methods need an ISO code as an argument
 
 ## Task
 
