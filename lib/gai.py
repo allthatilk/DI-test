@@ -33,7 +33,16 @@ def listData(iso_code):
 
 def averageData(iso_code):
     """Returns an average of all GAI scores for all available years for a given country"""
-    pass
+    dataset = list(extractData(iso_code))
+    scores = []
+    for data in dataset:
+        scores.append(float(data[-1]))
+
+    length = len(scores)
+    total_value = sum(scores)
+    result = total_value / length
+    return result
+    # Defaulting to mean, but if I get time, would be cool to add other forms of averaging to select from
 
 def returnDataOptions(iso_code):
     """Takes an ISO code as an argument and returns options for data"""
