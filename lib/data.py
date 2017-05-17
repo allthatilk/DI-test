@@ -12,14 +12,12 @@ class CountryData:
         """Creates dataset from csv file"""
         with open(self.csvfile, 'r') as f:
             self.dataset = csv.DictReader(f)
-            year = []
-            value = []
+            data = []
             for row in self.dataset:
                 if row['id'] == self.iso_code:
-                    year.append(row['year'])
-                    value.append(row['value'])
+                    data.append((row['year'], row['value']))
 
-            self.dataset = zip(year, value)
+            self.dataset = data
 
     def listData(self):
         """Returns a formatted string of years and values for the given ISO"""
