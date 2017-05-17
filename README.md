@@ -3,7 +3,7 @@
 ## How to:
 	* clone this repo
 	* create and load virtual environment in local directory
-	* pip install requirements.txt
+	* pip install -r requirements.txt
 	* load python REPL
 	* from lib.gai import loadcsv, extractData, listData, meanData, rangeData, standardDeviationData
 	* before all other methods run loadcsv(https://raw.githubusercontent.com/devinit/digital-platform/master/country-year/climate-vulnerability.csv)
