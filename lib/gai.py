@@ -1,5 +1,6 @@
 """Script to return Global Adaptation Index (GAI) data by country."""
 import csv
+import math
 import requests
 
 def loadcsv(url):
@@ -39,7 +40,7 @@ def prepDataForAverages(iso_code):
     return scores
 
 def meanData(iso_code):
-    """Returns mean average of all GAI scores for all available years for a given country"""
+    """Returns mean average of all GAI scores for all available years for a given ISO code"""
     scores = prepDataForAverages(iso_code)
     length = len(scores)
     total_value = sum(scores)
@@ -47,6 +48,7 @@ def meanData(iso_code):
     return result
 
 def rangeData(iso_code):
+    """Returns range of GAI scores for given ISO code"""
     scores = prepDataForAverages(iso_code)
     sorted_scores = sorted(scores)
     result = sorted_scores[-1] - sorted_scores[0]
@@ -54,4 +56,14 @@ def rangeData(iso_code):
 
 
 def standardDeviationData(iso_code):
-    pass
+    """Returns standard deviation for GAI scores of a given ISO code"""
+    scores = prepDataForAverages(iso_code)
+    mean = meanData(iso_code)
+    subtracted_scores = []
+    for score in scores:
+        subtracted_scores.append((score - mean)**2)
+    sum_subtracted_scores = sum(subtracted_scores)
+    length = len(subtracted_scores)
+    sd_mean = sum_subtracted_scores / length
+    result = math.sqrt(sd_mean)
+    return result

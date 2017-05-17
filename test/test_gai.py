@@ -1,4 +1,4 @@
-from lib.gai import loadcsv, extractData, listData, meanData, rangeData
+from lib.gai import loadcsv, extractData, listData, meanData, rangeData, standardDeviationData
 import os.path
 
 def test_loadcsv():
@@ -23,6 +23,10 @@ def test_rangeData():
     """Test to check method gives correct range of all GAI scores for given ISO code"""
     assert rangeData("AE") == 0.013789633999999995
 
+def test_standardDeviationData():
+    """Test to check method give correct standard deviation of GAI scores for given ISO code"""
+    assert standardDeviationData("AE") == 0.0038898556912647137
+
 # For copying to python REPL
 a = [0.30251184, 0.302267024, 0.303079269, 0.297885987, 0.305190096, 0.310410195, 0.297995201, 0.296620561, 0.305768368, 0.297571739, 0.29877485, 0.29857415, 0.29837345, 0.298276917]
 
@@ -31,4 +35,4 @@ total = 4.213299647
 
 mean = 0.30094997478571434
 r4ange = 0.013789633999999995
-# standard_deviation =
+standard_deviation = 0.0038898556912647137
