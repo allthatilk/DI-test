@@ -30,7 +30,7 @@ There's no need to return the country text name (e.g. Andorra if the input count
 
 Time taken: ~7 hours
 
-Decisions:
+### Decisions:
 * Created a method to loadcsv file so data can be updated in future if needed
 * Extracted data extraction from csv to a method that other methods depend on to make code more DRY and keep to SRP
 * Removed returnDataOptions method as task specifies that data will feed into external interface so a command line UI isn't needed
@@ -38,7 +38,7 @@ Decisions:
 * Didn't add mode or median because they didn't seem useful for this data set as scores didn't repeat and the middle score would have given more of a time snapshot than any useful data on score trends
 
 
-Challenges:
+### Challenges:
 * Getting used to the csv module
 * Incomplete Python knowledge
 * Extracting the data in a useful way
