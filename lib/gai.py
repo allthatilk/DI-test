@@ -6,7 +6,6 @@ import requests
 def loadcsv(url):
     """Rewrites csv file with data from given URL"""
     csv_download = requests.get(url)
-
     with open('lib/gai.csv', 'w') as f:
         f.writelines(csv_download.content.decode('utf-8'))
 
