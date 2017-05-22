@@ -1,6 +1,6 @@
 # Development Initiatives Test
 
-## Refactor beta how to:
+## How to:
 
 * clone this repo
 * create and load virtual environment in local directory
@@ -12,22 +12,6 @@ pip install -r requirements.txt
 python run.py
 ```
 Enjoy!
-
-## How to:
-* clone this repo
-* create and load virtual environment in local directory
-* run python
-* run:
-```
-from lib.gai import loadcsv, extractData, listData, meanData, rangeData, standardDeviationData
-```
-* before all other methods run to make sure data is up to date:
-```
-loadcsv("https://raw.githubusercontent.com/devinit/digital-platform/master/country-year/climate-vulnerability.csv")
-```
-* use the listData, meanData, rangeData, and standardDeviationData methods to manipulate csv data in REPL eg. listData("AE") which will return the available data for the United Arab Emirates
-
-	All methods need an ISO code as an argument
 
 ## Task
 
