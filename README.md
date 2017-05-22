@@ -4,7 +4,7 @@
 
 * clone this repo
 * create and load virtual environment in local directory
-* install requirements
+* install requirements:
 ```
 pip install -r requirements.txt
 ```
