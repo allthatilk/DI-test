@@ -18,6 +18,7 @@ def test_mean():
 
 def test_range():
     """Test to see that range returns the range"""
+    # need to learn more about why it does this...
     assert averages.range() == 0.30000000000000004
 
 def test_standardDeviation():
