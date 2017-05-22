@@ -16,12 +16,10 @@ def test_mean():
     """Tests to see that mean returns the mean"""
     assert averages.mean() == 0.25
 
+def test_range():
+    """Test to see that range returns the range"""
+    assert averages.range() == 0.30000000000000004
 
-
-
-
-
-
-# range returns the range
-
-# standardDeviationData returns the standard deviation from the mean
+def test_standardDeviation():
+    """Test to see that standardDeviation returns the standard deviation from the mean"""
+    assert averages.standardDeviation() == 0.11180339887498948
