@@ -2,7 +2,7 @@
 
 ## Refactor beta how to:
 
-* clones this repo
+* clone this repo
 * create and load virtual environment in local directory
 * install requirements
 ```
