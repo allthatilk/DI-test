@@ -1,6 +1,4 @@
-# WIP
 import math
-# from lib.data import CountryData
 
 class Averages:
     def __init__(self, country_data):

@@ -1,5 +1,18 @@
 # Development Initiatives Test
 
+## Refactor beta how to:
+
+* clones this repo
+* create and load virtual environment in local directory
+* install requirements
+```
+pip install -r requirements.txt
+```
+```
+python run.py
+```
+Enjoy!
+
 ## How to:
 * clone this repo
 * create and load virtual environment in local directory
@@ -51,3 +64,10 @@ Time taken: ~9 hours
 * Remembering how to do averages... it's been a while.
 * Problems with zip on refactoring(can only use list on zip once per dataset generation)
 * Not enough time to write tests for refactored code
+
+### Refactoring in progress
+* Separated responsibilities in original code to CountryData and Averages classes
+* Not yet tested these methods due to previous time constraints but this is now in progress
+* After feedback made it so users can continue to select country info via ISO code until they choose to quit program
+* Finally got rid of the need for a CSV file. Though the climate-vulnerability.csv URL is hardcoded into the run file currently, purely to avoid errors from URLs with invalid formats being passed to the method
+* Looking to add some kind of URL data validation to allow URLs to be passed in as long as they have the correct format in the future

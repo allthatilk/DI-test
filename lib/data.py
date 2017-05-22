@@ -1,23 +1,22 @@
-# WIP
 import requests
 import csv
 
 class CountryData:
-    def __init__(self, csvfile, iso_code):
-        self.csvfile = csvfile
-        self.iso_code = iso_code.upper()
-        self.dataset = self.createDataset()
+    def __init__(self, url):
+        self.url = url
+        self.dataset = []
 
-    def createDataset(self):
-        """Creates dataset from csv file"""
-        with open(self.csvfile, 'r') as f:
-            self.dataset = csv.DictReader(f)
-            data = []
-            for row in self.dataset:
-                if row['id'] == self.iso_code:
-                    data.append((row['year'], row['value']))
+    def createDataset(self, iso_code):
+        csv_download = requests.get(self.url)
+        data = csv_download.content.decode('utf-8')
+        result = data.split('\n')
+        data = []
+        self.dataset = csv.DictReader(result)
+        for row in self.dataset:
+            if row['id'] == iso_code:
+                data.append((row['year'], row['value']))
 
-            self.dataset = data
+        self.dataset = data
 
     def listData(self):
         """Returns a formatted string of years and values for the given ISO"""
