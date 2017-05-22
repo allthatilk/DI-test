@@ -1,4 +1,5 @@
 from lib.data import CountryData
+import requests
 import requests_mock
 
 data = "id,year,value\nTE,2000,0.3\nTE,2001,0.4\nTE,2002,0.1\nTE,2003,0.2"
@@ -10,10 +11,12 @@ def test_CountryData():
     country = CountryData(url)
     assert country.url == 'this is a URL'
 
-# def test_createDataset():
-#     adapter = requests_mock.Adapter()
-#     adapter.register_uri('GET', 'mock://test.com/path', text=data)
-#     country = CountryData('mock://test.com/path')
+def test_createDataset():
+    with requests_mock.mock() as m:
+        m.get('http://test.com', text=data)
+        country = CountryData('http://test.com')
+        country.createDataset("TE")
+        assert country.dataset == [('2000', '0.3'), ('2001', '0.4'), ('2002', '0.1'), ('2003', '0.2')]
 
 # createDataset returns dataset for given country_data
 #
