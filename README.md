@@ -71,3 +71,4 @@ Time taken: ~9 hours
 * After feedback made it so users can continue to select country info via ISO code until they choose to quit program
 * Finally got rid of the need for a CSV file. Though the climate-vulnerability.csv URL is hardcoded into the run file currently, purely to avoid errors from URLs with invalid formats being passed to the method
 * Looking to add some kind of URL data validation to allow URLs to be passed in as long as they have the correct format in the future
+* Need to add error handling for when users enter an ISO code that doesn't have any associated values
