@@ -28,10 +28,9 @@ class Averages:
 
     def standardDeviation(self):
         """Returns standard deviation for GAI scores"""
-        mean = self.mean()
         subtracted_scores = []
         for score in self.data:
-            subtracted_scores.append((score - mean)**2)
+            subtracted_scores.append((score - self.mean())**2)
         sum_subtracted_scores = sum(subtracted_scores)
         length = len(subtracted_scores)
         sd_mean = sum_subtracted_scores / length

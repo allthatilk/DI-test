@@ -7,6 +7,7 @@ country_data = CountryData("https://raw.githubusercontent.com/devinit/digital-pl
 def chooseCountry(iso_code):
     country_data.createDataset(iso_code.upper())
 
+    print("Global Adaptation Index data for selected country")
     print("List of available GAI scores for available years:")
     print(country_data.listData())
 
@@ -21,7 +22,6 @@ def chooseCountry(iso_code):
     print(averages.standardDeviation())
 
 def main():
-    print("Global Adaptation Index data for selected country")
     iso_code = input("Please provide a country's ISO code:\n")
     chooseCountry(iso_code)
     while iso_code != 'quit':
